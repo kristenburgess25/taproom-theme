@@ -2306,6 +2306,19 @@ hr {
   .grid-view-item__meta {
     font-size: calc(((var(--font-size-base) - 1) / (var(--font-size-base))) * 1em); } }
 
+.grid-view-item__button-container {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.grid-view-item__button {
+  color: magenta;
+  width: 100%;
+}
+
+
 .grid-view-item__link {
   display: block; }
 
@@ -2326,7 +2339,9 @@ hr {
 .grid-view-item__image {
   display: block;
   margin: 0 auto;
-  width: 100%; }
+  width: 100%; 
+  height: auto;
+}
   .grid-view-item__image-wrapper .grid-view-item__image {
     position: absolute;
     top: 0; }
