@@ -1,14 +1,17 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 
 <section class="faq">
-<div id="vue-faq">
-${ message }
-</div>
 <div class="container">
 <div class="faq-outter">
 <h2 class="section-heading">Frequently Asked Questions</h2>
 </div>
-<p> Is this a question ? </p>
+<div id="vue-faq">
+    <ul id="faq-container">
+        <li v-for="item in items" :key="item.message">
+            ${ item.message }
+        </li>
+    </ul>
+</div>
 </div>
 </section>
 
@@ -16,7 +19,10 @@ ${ message }
   var app = new Vue({
     el: '#vue-faq',
     data: {
-      message: 'Hello Vue!'
+      items: [
+      { message: 'Is this a question?' },
+      { message: 'Is this also a question?' }
+    ]
     },
     delimiters: ['${', '}']
   })
