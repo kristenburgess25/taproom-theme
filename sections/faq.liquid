@@ -8,15 +8,21 @@
 <div id="vue-faq">
     <ul id="faq-container">
         <li v-for="item in items" :key="item.message">
-            ${ item.message }
+           <p> ${ item.message } </p>
+           <faq-item></faq-item>
         </li>
     </ul>
+    
 </div>
 </div>
 </section>
 
 <script>
-  var app = new Vue({
+    const FAQ =  {
+      template: '<p> this could be the answer </p>'
+    }
+
+  const app = new Vue({
     el: '#vue-faq',
     data: {
       items: [
@@ -24,8 +30,13 @@
       { message: 'Is this also a question?' }
     ]
     },
-    delimiters: ['${', '}']
+    delimiters: ['${', '}'],
+    components: {
+        'faq-item': FAQ
+    }
   })
+
+
 </script>
 
 
