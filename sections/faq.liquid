@@ -1,4 +1,9 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
 <section class="faq">
+<div id="vue-faq">
+${ message }
+</div>
 <div class="container">
 <div class="faq-outter">
 <h2 class="section-heading">Frequently Asked Questions</h2>
@@ -6,6 +11,18 @@
 <p> Is this a question ? </p>
 </div>
 </section>
+
+<script>
+  var app = new Vue({
+    el: '#vue-faq',
+    data: {
+      message: 'Hello Vue!'
+    },
+    delimiters: ['${', '}']
+  })
+</script>
+
+
 {% schema %}
 {
 "name": "FAQ",
