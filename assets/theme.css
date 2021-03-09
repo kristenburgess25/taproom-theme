@@ -2314,7 +2314,8 @@ hr {
 }
 
 .grid-view-item__button {
-  color: magenta;
+  color: white;
+  background-color: black;
   width: 100%;
   opacity: 0;
 }
