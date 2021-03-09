@@ -8,8 +8,7 @@
 <div id="vue-faq">
     <ul id="faq-container">
         <li v-for="item in items" :key="item.message">
-           <p> ${ item.question } </p>
-            <faq-item v-bind:answer="item.answer"></faq-item>
+            <faq-item v-bind:item="item"></faq-item>
         </li>
     </ul>
     
@@ -19,29 +18,33 @@
 
 <script>
     const FAQ =  {
-        props: ['answer'],
+        props: ['item'],
         delimiters: ['${', '}'],
-        template: '<p> ${ answer } </p>',
-        mounted: function() {
-          console.log('here are your props', this.answer)
-      }
+        template: '<div> <p @click="handleClick()"> ${ item.question } </p> <p v-show="selected"> ${ item.answer } </p> </div>',
+        data: function() {
+            return {
+                selected: false,
+            }
+        },
+        methods: {
+            handleClick: function() {
+                let selectedStatus = this.selected;
+                this.selected = !selectedStatus;
+            }
+        }
     }
 
-  const app = new Vue({
-    el: '#vue-faq',
-    data: {
-      items: [
-      { question: 'Is this a question?', answer: "It most certainly is" },
-      { question: 'Is this also a question?', answer: "Bih, it might be!" }
-    ]
-    },
-    delimiters: ['${', '}'],
-    components: {
-        'faq-item': FAQ
-    }
-  })
-
-
+    const app = new Vue({
+        el: '#vue-faq',
+        data: {
+            items: [
+                { question: 'Is this a question?', answer: "It most certainly is" },
+                { question: 'Is this also a question?', answer: "Bih, it might be!" }
+            ]
+        },
+        delimiters: ['${', '}'],
+        components: {'faq-item': FAQ}
+    })
 </script>
 
 
