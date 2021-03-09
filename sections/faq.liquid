@@ -8,8 +8,8 @@
 <div id="vue-faq">
     <ul id="faq-container">
         <li v-for="item in items" :key="item.message">
-           <p> ${ item.message } </p>
-           <faq-item></faq-item>
+           <p> ${ item.question } </p>
+            <faq-item v-bind:answer="item.answer"></faq-item>
         </li>
     </ul>
     
@@ -19,15 +19,20 @@
 
 <script>
     const FAQ =  {
-      template: '<p> this could be the answer </p>'
+        props: ['answer'],
+        delimiters: ['${', '}'],
+        template: '<p> ${ answer } </p>',
+        mounted: function() {
+          console.log('here are your props', this.answer)
+      }
     }
 
   const app = new Vue({
     el: '#vue-faq',
     data: {
       items: [
-      { message: 'Is this a question?' },
-      { message: 'Is this also a question?' }
+      { question: 'Is this a question?', answer: "It most certainly is" },
+      { question: 'Is this also a question?', answer: "Bih, it might be!" }
     ]
     },
     delimiters: ['${', '}'],
