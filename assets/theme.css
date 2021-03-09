@@ -2316,8 +2316,12 @@ hr {
 .grid-view-item__button {
   color: magenta;
   width: 100%;
+  opacity: 0;
 }
 
+.grid-view-item:hover button {
+  opacity: 1;
+}
 
 .grid-view-item__link {
   display: block; }
