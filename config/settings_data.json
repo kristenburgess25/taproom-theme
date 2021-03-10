@@ -137,14 +137,14 @@
                 "type": "faqs",
                 "blocks": {
                     "faqs-0": {
-                        "type": "faq",
+                        "type": "text",
                         "settings": {
                             "question": "Is Kristen a good developer?",
                             "answer": "I mean, I would say so, but I'm biased."
                         }
                     },
                     "faqs-1": {
-                        "type": "faq",
+                        "type": "text",
                         "settings": {
                             "question": "Should The Taproom hire Kristen?",
                             "answer": "Seems like a great idea!"
