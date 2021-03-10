@@ -7019,10 +7019,6 @@ hr {
   margin-bottom: 0; }
 
 /*================ FAQ Section ================*/
-.faq-heading {
-  text-align: center;
-}
-
 .accordion {
   background-color:#eee;
   color: #444;
@@ -7033,19 +7029,6 @@ hr {
   border: none;
   outline: none;
   transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-
-.panel {
-  padding: 0 18px;
-  font-style: italic;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
 }
 
 .accordion:after {
@@ -7059,3 +7042,19 @@ hr {
 .active:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
+
+.faq-heading {
+  text-align: center;
+}
+
+.panel {
+  padding: 0 18px;
+  font-style: italic;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+
+
