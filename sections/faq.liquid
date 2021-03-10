@@ -1,7 +1,7 @@
-<section class="faq">
+<section id="faqs" >
     <div class="container">
-        <div class="faq-outter">
-            <h2 class="faq-heading">Frequently Asked Questions</h2>
+        <div class="section-header text-center">
+            <h2>Frequently Asked Questions</h2>
         </div>
         <button class="accordion">Is this a question?</button>
         <div class="panel">
@@ -34,16 +34,53 @@ for (i = 0; i < acc.length; i++) {
 
 {% schema %}
 {
-"name": "FAQ",
-"settings": [],
+"name": "FAQS",
+"settings": [
+    {   
+        "id": "faqs",
+        "type": "text",
+        "label": "Heading",
+        "default": "Frequently Asked Questions"
+    }
+],
+"blocks": [
+    {
+        "type": "faq",
+        "name": "FAQ"
+    },
+    settings: [
+        {
+            type: "text",
+            id: "question",
+            "label": "Question"
+            "default": "Frequently Asked Question"
+        },
+        {
+            "type": "text",
+            "id": "answer",
+            "label": "Answer"
+            "default": "Answer"
+        },
+
+    ]
+],
 "presets": [
-{
-"name": "FAQ",
-"category": "ADVANCED LAYOUT"
-}
+    {
+        "name": "FAQS",
+        "category": "ADVANCED LAYOUT"
+        "blocks": [
+            {
+                "type": "faq"
+            },
+            {
+                "type": "faq"
+            }
+        ]
+    }
 ]
 }
 {% endschema %}
+
 {% stylesheet %}
 {% endstylesheet %}
 {% javascript %}
