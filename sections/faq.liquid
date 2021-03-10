@@ -34,52 +34,74 @@ for (i = 0; i < acc.length; i++) {
 
 {% schema %}
 {
-"name": "FAQS",
-"settings": [
-    {   
-        "id": "faqs",
-        "type": "text",
-        "label": "Heading",
-        "default": "Frequently Asked Questions"
-    }
-],
-"blocks": [
+  "name": {
+    "en": "FAQ"
+  },
+  "class": "index-section",
+  "max_blocks": 9,
+  "settings": [
     {
-        "type": "faq",
-        "name": "FAQ"
-    },
-    settings: [
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Heading"
+      },
+      "default": {
+        "en": "FAQ"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": {
+        "en": "FAQ"
+      },
+      "settings": [
         {
-            type: "text",
-            id: "question",
-            "label": "Question"
-            "default": "Frequently Asked Question"
+          "type": "text",
+          "id": "faq",
+          "label": {
+            "en": "Question"
+          },
+          "default": {
+            "en": "Frequent question"
+          }
         },
         {
-            "type": "text",
-            "id": "answer",
-            "label": "Answer"
-            "default": "Answer"
-        },
-
-    ]
-],
-"presets": [
-    {
-        "name": "FAQS",
-        "category": "ADVANCED LAYOUT"
-        "blocks": [
-            {
-                "type": "faq"
-            },
-            {
-                "type": "faq"
-            }
-        ]
+          "type": "text",
+          "id": "answer",
+          "label": {
+            "en": "Answer"
+          },
+          "default": {
+            "en": "Frequent answer"
+          }
+        }
+      ]
     }
-]
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "FAQ"
+      },
+      "category": {
+        "en": "Custom Section"
+      },
+      "blocks": [
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
+
 
 {% stylesheet %}
 {% endstylesheet %}
