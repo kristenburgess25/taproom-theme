@@ -4,12 +4,12 @@
             <h2>{{section.settings.title}}</h2>
         </div>
       {% for block in section.blocks %}
-                     {% if block.settings.question != blank %}
-                  <div> {{ block.settings.question }}</div>
-                {% endif %}
-                {% if block.settings.answer != blank %}
-                  <div>{{ block.settings.answer | escape }}</div>
-                {% endif %}
+        {% if block.settings.question != blank %}
+          <div> {{ block.settings.question }}</div>
+        {% endif %}
+        {% if block.settings.answer != blank %}
+          <div>{{ block.settings.answer | escape }}</div>
+        {% endif %}
       {% endfor %}
       
         <button class="accordion">Is this a question?</button>
