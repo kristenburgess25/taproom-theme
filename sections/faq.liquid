@@ -1,35 +1,34 @@
 <section class="faq">
-<div class="container">
-<div class="faq-outter">
-<h2 class="faq-heading">Frequently Asked Questions</h2>
-</div>
-<button class="accordion">Is this a question?</button>
-<div class="panel">
-  <p>It most certainly is!</p>
-</div>
-
-<button class="accordion">Is this also a question?</button>
-<div class="panel">
-  <p>Seems likely...</p>
-</div>
-
-</div>
+    <div class="container">
+        <div class="faq-outter">
+            <h2 class="faq-heading">Frequently Asked Questions</h2>
+        </div>
+        <button class="accordion">Is this a question?</button>
+        <div class="panel">
+            <p>It most certainly is!</p>
+        </div>
+        <button class="accordion">Is this also a question?</button>
+        <div class="panel">
+            <p>Seems likely...</p>
+        </div>
+    </div>
 </section>
 
 <script type="text/javascript">
+
 const acc = document.getElementsByClassName("accordion");
 let i;
-
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    const panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
 }
 </script>
 
